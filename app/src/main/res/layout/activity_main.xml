@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:transformPivotY="56dp"
     tools:context=".Combo_Keyboard">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,77 +21,19 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginStart="16dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/frameLayout4"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent">
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="4dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageButton
-                android:id="@+id/imageButton3"
+                android:id="@+id/lbutton"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_gravity="center"
                 android:background="#00000000"
                 android:scaleType="fitXY"
-                android:src="@drawable/m_button"
-                tools:ignore="ContentDescription" />
+                app:srcCompat="@drawable/lbutton" />
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="71dp"
-                android:layout_gravity="center"
-                android:clickable="false"
-                android:scaleType="fitXY"
-                android:text="M"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textColor="#ffffff"
-                android:textDirection="firstStrongRtl"
-                android:textSize="52sp"
-                android:translationY="-2dp"
-                tools:layout_editor_absoluteX="152dp"
-                tools:layout_editor_absoluteY="479dp"></TextView>
-        </FrameLayout>
-
-        <FrameLayout
-            android:id="@+id/frameLayout4"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/frameLayout2"
-            app:layout_constraintVertical_bias="1.0">
-
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:background="#00000000"
-                android:scaleType="fitXY"
-                android:src="@drawable/h_button"
-                tools:ignore="ContentDescription" />
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="71dp"
-                android:layout_gravity="center"
-                android:clickable="false"
-                android:scaleType="fitXY"
-                android:text="H"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textColor="#ffffff"
-                android:textDirection="firstStrongRtl"
-                android:textSize="58sp"
-                android:translationY="-6dp"
-                tools:layout_editor_absoluteX="152dp"
-                tools:layout_editor_absoluteY="479dp"></TextView>
         </FrameLayout>
 
         <FrameLayout
@@ -107,31 +48,12 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageButton
-                android:id="@+id/imageButton4"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
+                android:id="@+id/sbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="#00000000"
                 android:scaleType="fitXY"
-                android:src="@drawable/s_button"
-                tools:ignore="ContentDescription" />
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="71dp"
-                android:layout_gravity="center"
-                android:clickable="false"
-                android:scaleType="fitXY"
-                android:text="S"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textColor="#ffffff"
-                android:textDirection="firstStrongRtl"
-                android:textSize="62sp"
-                android:translationY="-10dp"
-                tools:layout_editor_absoluteX="152dp"
-                tools:layout_editor_absoluteY="479dp"></TextView>
+                app:srcCompat="@drawable/sbutton" />
         </FrameLayout>
 
         <FrameLayout
@@ -139,38 +61,50 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="4dp"
-            app:layout_constraintBottom_toTopOf="@+id/frameLayout"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/frameLayout4"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/mbutton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="#00000000"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/mbutton" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout4"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameLayout2"
+            app:layout_constraintVertical_bias="1.0">
+
+            <ImageButton
+                android:id="@+id/hbutton"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center"
                 android:background="#00000000"
                 android:scaleType="fitXY"
-                android:src="@drawable/l_button"
-                tools:ignore="ContentDescription" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="71dp"
-                android:layout_gravity="center"
-                android:clickable="false"
-                android:scaleType="fitXY"
-                android:text="L"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textColor="#ffffff"
-                android:textDirection="firstStrongRtl"
-                android:textSize="62sp"
-                android:translationY="-10dp"
-                tools:layout_editor_absoluteX="152dp"
-                tools:layout_editor_absoluteY="479dp"></TextView>
+                app:srcCompat="@drawable/hbutton" />
         </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="150dp"
+        android:layout_height="190dp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="194dp">
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

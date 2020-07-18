@@ -1,4 +1,4 @@
 package com.version1.comboPost;
 
-public class Post {
+public class Post_view {
 }

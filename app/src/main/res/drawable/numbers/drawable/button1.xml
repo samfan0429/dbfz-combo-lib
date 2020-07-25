@@ -2,8 +2,8 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:state_pressed="true"
-        android:drawable="@drawable/7pressed" />
+        android:drawable="@drawable/pressed1" />
     <item
         android:state_pressed="false"
-        android:drawable="@drawable/7" />
+        android:drawable="@drawable/norm1" />
 </selector>

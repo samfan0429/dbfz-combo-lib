@@ -42,7 +42,7 @@
                     android:layout_width="289dp"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
-                    android:text="214"
+                    android:text="Enter Your Combos"
                     android:textAlignment="viewStart"
                     android:textColor="@android:color/background_dark"
                     android:textSize="16sp" />
@@ -66,16 +66,83 @@
         </LinearLayout>
     </ScrollView>
 
-    <include
-        layout="@layout/controller"
-        android:layout_width="387dp"
-        android:layout_height="275dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        android:visibility="gone"/>
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2">
+
+        <com.version1.dbfz_combos.CallKeyButton
+            android:id="@+id/joypad"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/buttoncaller"
+            android:onClick="onClick"
+
+            app:name="Commands"
+            app:myFrame="@id/customKeyboard" />
+
+        <com.version1.dbfz_combos.CallKeyButton
+            android:id="@+id/chara"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/buttoncaller"
+            android:onClick="onClick"
+
+            app:name="Characters"
+            app:myFrame="@id/customKeyboard" />
+
+
+        <com.version1.dbfz_combos.CallKeyButton
+            android:id="@+id/button"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/buttoncaller"
+            android:onClick="onClick"
+
+
+            app:name="none"
+            app:myFrame="@id/customKeyboard" />
+
+
+    </LinearLayout>
+
+    <com.version1.dbfz_combos.keyGroup
+        android:id="@+id/customKeyboard"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:layout_marginBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <include
+            android:id="@+id/controller"
+            layout="@layout/controller"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible" />
+        <include
+            android:id="@+id/sacrifices"
+            layout="@layout/characters"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+        <include
+            android:id="@+id/sacrifices2"
+            layout="@layout/characters"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+    </com.version1.dbfz_combos.keyGroup>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

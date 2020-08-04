@@ -6,18 +6,13 @@ import android.content.res.TypedArray;
 import android.text.Layout;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
+import android.view.ViewGroup;
 
-import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
+public class CallKeyButton extends androidx.appcompat.widget.AppCompatButton implements View.OnTouchListener {
 
-import java.lang.reflect.Type;
-
-public class CallKeyButton extends androidx.appcompat.widget.AppCompatButton implements View.OnClickListener {
-
-    private KeyBoard myFrame;
+    private CallButtonLayout papa;
     private String name;
 
 
@@ -28,7 +23,7 @@ public class CallKeyButton extends androidx.appcompat.widget.AppCompatButton imp
 
     public CallKeyButton(Context context, AttributeSet attrs) {
         super(context, attrs);
-        setOnClickListener(this);
+        setOnTouchListener(this);
 
         TypedArray a = context.obtainStyledAttributes(attrs,R.styleable.CallKeyButton);
         init(a, context);
@@ -37,28 +32,37 @@ public class CallKeyButton extends androidx.appcompat.widget.AppCompatButton imp
 
     public CallKeyButton(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        setOnClickListener(this);
 
         TypedArray a = context.obtainStyledAttributes(attrs,R.styleable.CallKeyButton);
-
         init(a, context);
         a.recycle();
     }
 
     @SuppressLint("InflateParams")
     private void init(TypedArray a, Context context){
-        this.name = a.getString(R.styleable.CallKeyButton_name);
+        setName(a.getString(R.styleable.CallKeyButton_name));
         super.setText(name);
-//        Log.d("Naming done ", " At least this works");
-    }
-
-    public void setMyFrame(KeyBoard myFrame) {
-        this.myFrame = myFrame;
     }
 
     @Override
-    public void onClick(View view) {
-        Log.d("Clicked", " I have been clicked for god's sake");
-        myFrame.changeView(this.name);
+    public boolean onTouch(View v, MotionEvent motionEvent) {
+        papa.update(this);
+        return true;
+    }
+
+    public void setPapa(CallButtonLayout papa){
+        this.papa = papa;
+    }
+
+    private void setName(String name){
+        this.name = name;
+    }
+
+    public CallButtonLayout getPapa(){
+        return papa;
+    }
+
+    public String getName(){
+        return name;
     }
 }

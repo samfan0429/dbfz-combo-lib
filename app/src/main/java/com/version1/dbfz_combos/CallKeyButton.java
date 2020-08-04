@@ -49,13 +49,6 @@ public class CallKeyButton extends androidx.appcompat.widget.AppCompatButton imp
     private void init(TypedArray a, Context context){
         this.name = a.getString(R.styleable.CallKeyButton_name);
         super.setText(name);
-
-//        int myFrameID = a.getResourceId(R.styleable.CallKeyButton_keyboard,-1);
-//        View v = new View(context);
-//        myFrame = v.findViewById(myFrameID);
-//        if(myFrame == null){
-//            Log.d("WTF", " thing is giving NULL");
-//        }
 //        Log.d("Naming done ", " At least this works");
     }
 

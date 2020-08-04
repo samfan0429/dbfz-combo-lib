@@ -66,7 +66,7 @@
         </LinearLayout>
     </ScrollView>
 
-    <LinearLayout
+    <com.version1.dbfz_combos.CallButtonLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="45dp"
@@ -84,7 +84,7 @@
             android:layout_weight="1"
             android:background="@drawable/buttoncaller"
             android:onClick="onClick"
-            app:name ="commands" />
+            app:name ="Commands" />
 
         <com.version1.dbfz_combos.CallKeyButton
             android:id="@+id/chara"
@@ -93,7 +93,7 @@
             android:layout_weight="1"
             android:background="@drawable/buttoncaller"
             android:onClick="onClick"
-            app:name="characters" />
+            app:name="Main" />
 
 
         <com.version1.dbfz_combos.CallKeyButton
@@ -103,10 +103,10 @@
             android:layout_weight="1"
             android:background="@drawable/buttoncaller"
             android:onClick="onClick"
-            app:name="none" />
+            app:name="Assists" />
 
 
-    </LinearLayout>
+    </com.version1.dbfz_combos.CallButtonLayout>
 
     <com.version1.dbfz_combos.KeyBoard
         android:id="@+id/customKeyboard"

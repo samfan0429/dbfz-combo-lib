@@ -1,25 +1,22 @@
 package com.version1.dbfz_combos;
 
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
+import java.util.HashMap;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class KeyBoard extends FrameLayout {
-    private ConstraintLayout controller;
-    private ConstraintLayout characters;
-    private ConstraintLayout none;
     private LayoutInflater inflater;
+    private HashMap<String,ConstraintLayout> layoutFinder;
+
 
     public KeyBoard(Context context){
         super(context);
-//        Log.d("worked well", " going well");
     }
 
     public KeyBoard(Context context, AttributeSet attrs) {
@@ -34,42 +31,32 @@ public class KeyBoard extends FrameLayout {
 
     private void init(Context context){
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        /*Initialize the views*/
+        layoutFinder = new HashMap<>();
+        /*Initialize the views and insert them to hash table for convenience*/
         View v = inflater.inflate(R.layout.controller,null);
-        controller = (ConstraintLayout) v;
-        controller.setVisibility(View.VISIBLE);
-        super.addView(controller);
+        ConstraintLayout tmp = (ConstraintLayout) v;
+        tmp.setVisibility(VISIBLE);
+        super.addView(tmp);
+        layoutFinder.put("commands",tmp);
 
         v = inflater.inflate(R.layout.characters,null);
-        characters = (ConstraintLayout) v;
-        characters.setVisibility(View.GONE);
-        super.addView(characters);
+        tmp = (ConstraintLayout) v;
+        tmp.setVisibility(GONE);
+        super.addView(tmp);
+        layoutFinder.put("main",tmp);
 
         v = inflater.inflate(R.layout.characters2,null);
-        none = (ConstraintLayout) v;
-        none.setVisibility(View.GONE);
-        super.addView(none);
+        tmp = (ConstraintLayout) v;
+        tmp.setVisibility(GONE);
+        super.addView(tmp);
+        layoutFinder.put("assists",tmp);
     }
 
     public void changeView(String buttonName){
-        if(buttonName.toLowerCase().equals("commands")){
-            if(controller.getVisibility()==View.GONE){
-                resetViews();
-                controller.setVisibility(View.VISIBLE);
-            }
-        }
-        else if(buttonName.toLowerCase().equals("characters")){
-            if(characters.getVisibility()==View.GONE){
-                resetViews();
-                characters.setVisibility(View.VISIBLE);
-            }
-        }
-        else{
-            if(none.getVisibility()==View.GONE){
-                resetViews();
-                none.setVisibility(View.VISIBLE);
-            }
-
+        ConstraintLayout tmp = layoutFinder.get(buttonName.toLowerCase());
+        if(tmp.getVisibility()==GONE){
+            resetViews();
+            tmp.setVisibility(VISIBLE);
         }
     }
 
@@ -78,8 +65,16 @@ public class KeyBoard extends FrameLayout {
         View tmp;
         for(int i =0; i<count ; i++){
             tmp = super.getChildAt(i);
-            tmp.setVisibility(View.GONE);
+            tmp.setVisibility(GONE);
         }
+    }
+
+    public HashMap<String,ConstraintLayout> getLayoutFinder(){
+        return layoutFinder;
+    }
+
+    public LayoutInflater getInflater(){
+        return getInflater();
     }
 
 }

@@ -2,7 +2,13 @@
 <resources>
     <declare-styleable name="CallKeyButton">
         <attr name="name" format="string" />
-        <attr name = "pressed" format = "boolean"/>
+        <attr name="keyboard" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="KeyBoard">
+        <attr name="controller" format="reference" />
+        <attr name="characters" format="reference" />
+        <attr name="none" format="reference" />
     </declare-styleable>
 
 

@@ -34,14 +34,11 @@ public class Combo_Keyboard extends AppCompatActivity implements View.OnClickLis
     }
 
     private void initCallButtons(){
-        keyGroup keypad = (keyGroup) findViewById(R.id.customKeyboard);
-        ConstraintLayout pad = (ConstraintLayout) findViewById(R.id.controller);
-        ConstraintLayout sacrifices = (ConstraintLayout) findViewById(R.id.sacrifices);
+        KeyBoard keypad = findViewById(R.id.customKeyboard);
 
-
-        CallKeyButton joypad = (CallKeyButton) findViewById(R.id.joypad);
-        CallKeyButton nothing = (CallKeyButton) findViewById(R.id.button);
-        CallKeyButton characters= (CallKeyButton) findViewById(R.id.chara);
+        CallKeyButton joypad = findViewById(R.id.joypad);
+        CallKeyButton nothing = findViewById(R.id.button);
+        CallKeyButton characters= findViewById(R.id.chara);
 
         joypad.setMyFrame(keypad);
         nothing.setMyFrame(keypad);

@@ -67,6 +67,7 @@
     </ScrollView>
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginTop="5dp"
@@ -83,9 +84,7 @@
             android:layout_weight="1"
             android:background="@drawable/buttoncaller"
             android:onClick="onClick"
-
-            app:name="Commands"
-            app:myFrame="@id/customKeyboard" />
+            app:name ="commands" />
 
         <com.version1.dbfz_combos.CallKeyButton
             android:id="@+id/chara"
@@ -94,9 +93,7 @@
             android:layout_weight="1"
             android:background="@drawable/buttoncaller"
             android:onClick="onClick"
-
-            app:name="Characters"
-            app:myFrame="@id/customKeyboard" />
+            app:name="characters" />
 
 
         <com.version1.dbfz_combos.CallKeyButton
@@ -106,43 +103,23 @@
             android:layout_weight="1"
             android:background="@drawable/buttoncaller"
             android:onClick="onClick"
-
-
-            app:name="none"
-            app:myFrame="@id/customKeyboard" />
+            app:name="none" />
 
 
     </LinearLayout>
 
-    <com.version1.dbfz_combos.keyGroup
+    <com.version1.dbfz_combos.KeyBoard
         android:id="@+id/customKeyboard"
         android:layout_width="match_parent"
         android:layout_height="270dp"
+        android:layout_marginTop="7dp"
         android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <include
-            android:id="@+id/controller"
-            layout="@layout/controller"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="visible" />
-        <include
-            android:id="@+id/sacrifices"
-            layout="@layout/characters"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone" />
-        <include
-            android:id="@+id/sacrifices2"
-            layout="@layout/characters"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone" />
-    </com.version1.dbfz_combos.keyGroup>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+    </com.version1.dbfz_combos.KeyBoard>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,38 +4,44 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/assists">
+<!--    app:role="assists">-->
 
-    <Button
-        android:id="@+id/sacrifice1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <com.version1.dbfz_combos.KeyButton
+        android:id="@+id/sacrifice4"
+        android:layout_width="81dp"
+        android:layout_height="106dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="20dp"
-        android:text="Test"
-        app:layout_constraintEnd_toStartOf="@+id/sacrifice2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/sacrifice2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="20dp"
-        android:text="Test2"
-        app:layout_constraintEnd_toStartOf="@+id/sacrifice3"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:onClick="onClick"
+        app:keyName="I"
+        app:layout_constraintEnd_toStartOf="@+id/sacrifice5"
+        app:layout_constraintHorizontal_bias="0.27"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button4" />
 
-    <Button
-        android:id="@+id/sacrifice3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <com.version1.dbfz_combos.KeyButton
+        android:id="@+id/sacrifice5"
+        android:layout_width="118dp"
+        android:layout_height="111dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="96dp"
-        android:text="Test3"
+        android:layout_marginEnd="28dp"
+        android:onClick="onClick"
+        app:keyName="N"
+        app:layout_constraintEnd_toStartOf="@+id/sacrifice6"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button5" />
+
+    <com.version1.dbfz_combos.KeyButton
+        android:id="@+id/sacrifice6"
+        android:layout_width="117dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="16dp"
+        android:onClick="onClick"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button6"
+        app:keyName="P"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

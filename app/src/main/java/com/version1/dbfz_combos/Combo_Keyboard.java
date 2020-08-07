@@ -3,10 +3,12 @@ package com.version1.dbfz_combos;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.content.Context;
 import android.content.res.TypedArray;
 import android.media.Image;
 import android.telecom.Call;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
@@ -36,11 +38,6 @@ public class Combo_Keyboard extends AppCompatActivity implements View.OnClickLis
     private void initCallButtons(){
         KeyBoard keypad = findViewById(R.id.customKeyboard);
         CallButtonLayout temp = findViewById(R.id.linearLayout);
-
-//        CallKeyButton joypad = (CallKeyButton) findViewById(R.id.joypad);
-//        CallKeyButton chara = (CallKeyButton) findViewById(R.id.chara);
-//        CallKeyButton assists =  (CallKeyButton) findViewById(R.id.assist);
-
         temp.setMyFrame(keypad);
     }
 

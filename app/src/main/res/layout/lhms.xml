@@ -3,6 +3,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+<!--    app:role="controller">-->
 
     <com.version1.dbfz_combos.KeyButton
         android:id="@+id/buttonl"
@@ -10,14 +11,14 @@
         android:layout_height="50dp"
         android:background="#00000000"
         android:scaleType="fitXY"
+        android:onClick="onClick"
         android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toStartOf="@+id/buttonm"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/lbutton" />
-
-
+        app:srcCompat="@drawable/lbutton"
+        app:keyName="L"/>
 
     <com.version1.dbfz_combos.KeyButton
         android:id="@+id/buttonm"
@@ -26,11 +27,13 @@
         android:layout_marginBottom="10dp"
         android:background="#00000000"
         android:scaleType="fitXY"
+        android:onClick="onClick"
         app:layout_constraintBottom_toTopOf="@+id/buttons"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/mbutton" />
+        app:srcCompat="@drawable/mbutton"
+        app:keyName="M"/>
 
     <com.version1.dbfz_combos.KeyButton
         android:id="@+id/buttonh"
@@ -39,11 +42,13 @@
         android:layout_marginTop="10dp"
         android:background="#00000000"
         android:scaleType="fitXY"
+        android:onClick="onClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonl"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/hbutton" />
+        app:srcCompat="@drawable/hbutton"
+        app:keyName="H"/>
 
     <com.version1.dbfz_combos.KeyButton
         android:id="@+id/buttons"
@@ -52,10 +57,12 @@
         android:layout_marginStart="10dp"
         android:background="#00000000"
         android:scaleType="fitXY"
+        android:onClick="onClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/buttonh"
-        app:srcCompat="@drawable/sbutton" />
+        app:srcCompat="@drawable/sbutton"
+        app:keyName="S"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

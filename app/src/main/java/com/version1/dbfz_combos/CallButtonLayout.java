@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 
 public class CallButtonLayout extends LinearLayout {
     private KeyBoard myFrame;
+    private CallKeyButton pressed;
 
     public CallButtonLayout(Context context) {
         super(context);
@@ -33,14 +34,16 @@ public class CallButtonLayout extends LinearLayout {
             tmp.setPapa(this);
             if(tmp.getName().toLowerCase().equals("commands")){
                 tmp.setPressed(true);
+                pressed = tmp;
             }
         }
     }
 
     public void update(CallKeyButton button){
-        if(!button.isPressed()) {
-            resetButtons();
+        if(!pressed.equals(button)) {
+            pressed.setPressed(false);
             button.setPressed(true);
+            pressed = button;
             myFrame.changeView(button.getName());
         }
     }

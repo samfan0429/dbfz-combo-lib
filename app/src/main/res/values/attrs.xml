@@ -8,5 +8,12 @@
         <attr name="myFrameID" format="reference"/>
     </declare-styleable>
 
+    <declare-styleable name="KeyButton">
+        <attr name="keyName" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="ButtonManager">
+        <attr name="role" format="string"/>
+    </declare-styleable>
 
 </resources>

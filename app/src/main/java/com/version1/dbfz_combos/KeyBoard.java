@@ -14,6 +14,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 public class KeyBoard extends ConstraintLayout {
     private LayoutInflater inflater;
     private HashMap<String,ConstraintLayout> layoutFinder;
+    private ConstraintLayout visible;
 
 
     public KeyBoard(Context context){
@@ -39,6 +40,7 @@ public class KeyBoard extends ConstraintLayout {
         tmp.setVisibility(VISIBLE);
         super.addView(tmp);
         layoutFinder.put("commands",tmp);
+        this.visible = tmp;
 
         v = inflater.inflate(R.layout.characters,null);
         tmp = (ConstraintLayout) v;
@@ -56,8 +58,9 @@ public class KeyBoard extends ConstraintLayout {
     public void changeView(String buttonName){
         ConstraintLayout tmp = layoutFinder.get(buttonName.toLowerCase());
         if(tmp.getVisibility()==GONE){
-            resetViews();
+            visible.setVisibility(GONE);
             tmp.setVisibility(VISIBLE);
+            visible = tmp;
         }
     }
 

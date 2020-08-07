@@ -4,37 +4,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/mainchara">
+<!--    app:role="main">-->
 
-    <Button
+    <com.version1.dbfz_combos.KeyButton
         android:id="@+id/sacrifice1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="81dp"
+        android:layout_height="106dp"
         android:layout_marginStart="30dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="20dp"
-        android:text="Test"
-        app:layout_constraintEnd_toStartOf="@+id/sacrifice2"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:onClick="onClick"
+        app:srcCompat="@drawable/button1"
+        app:keyName="I"/>
 
-    <Button
+    <com.version1.dbfz_combos.KeyButton
         android:id="@+id/sacrifice2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="20dp"
-        android:text="Test2"
+        android:layout_width="118dp"
+        android:layout_height="111dp"
+        android:onClick="onClick"
         app:layout_constraintEnd_toStartOf="@+id/sacrifice3"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:srcCompat="@drawable/button2"
+        app:keyName="N"/>
 
-    <Button
+    <com.version1.dbfz_combos.KeyButton
         android:id="@+id/sacrifice3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Test3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="117dp"
+        android:layout_height="122dp"
+        android:onClick="onClick"
+        app:keyName="P"
+        app:srcCompat="@drawable/button3" />
 </androidx.constraintlayout.widget.ConstraintLayout>

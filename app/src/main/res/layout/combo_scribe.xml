@@ -4,80 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scaleType="fitXY"
     tools:context=".Combo_Keyboard">
 
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="390dp"
-        android:layout_height="250dp"
-        android:layout_marginStart="5dp"
+    <include
+        android:id="@+id/output"
+        layout="@layout/outputs"
+        android:layout_width="match_parent"
+        android:layout_height="222dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/command"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:text="Commands:"
-                    android:textAlignment="textStart"
-                    android:textColor="@android:color/background_dark"
-                    android:textSize="16sp" />
-
-                <TextView
-                    android:id="@+id/commandList"
-                    android:layout_width="289dp"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitXY"
-                    android:text="Enter Your Combos"
-                    android:textAlignment="viewStart"
-                    android:textColor="@android:color/background_dark"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/character"
-                    android:layout_width="99dp"
-                    android:layout_height="wrap_content"
-                    android:text="Characters:"
-                    android:textAlignment="textStart"
-                    android:textColor="@android:color/background_dark"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.version1.dbfz_combos.CallButtonLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:layout_marginTop="5dp"
-        android:orientation="horizontal"
+        android:layout_marginTop="25dp"
         android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-        android:focusable="true">
+        app:layout_constraintTop_toBottomOf="@+id/output">
 
         <com.version1.dbfz_combos.CallKeyButton
             android:id="@+id/joypad"
@@ -85,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/buttoncaller"
-            app:name ="Commands" />
+            app:name="Commands" />
 
         <com.version1.dbfz_combos.CallKeyButton
             android:id="@+id/chara"
@@ -115,10 +67,10 @@
         android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-    </com.version1.dbfz_combos.KeyBoard>
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.959"></com.version1.dbfz_combos.KeyBoard>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

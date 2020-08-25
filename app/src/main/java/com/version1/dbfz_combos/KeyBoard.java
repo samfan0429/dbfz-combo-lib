@@ -13,8 +13,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class KeyBoard extends ConstraintLayout {
     private LayoutInflater inflater;
-    private HashMap<String,ConstraintLayout> layoutFinder;
-    private ConstraintLayout visible;
+    private HashMap<String,ButtonManager> layoutFinder;
+    private ButtonManager visible;
 
 
     public KeyBoard(Context context){
@@ -36,27 +36,34 @@ public class KeyBoard extends ConstraintLayout {
         layoutFinder = new HashMap<>();
         /*Initialize the views and insert them to hash table for convenience*/
         View v = inflater.inflate(R.layout.controller,null);
-        ConstraintLayout tmp = (ConstraintLayout) v;
+        ButtonManager tmp = (ButtonManager) v;
         tmp.setVisibility(VISIBLE);
         super.addView(tmp);
         layoutFinder.put("commands",tmp);
+//        Log.i("childCount",Integer.toString(tmp.getChildCount()));
         this.visible = tmp;
+        tmp.initThings();
 
         v = inflater.inflate(R.layout.characters,null);
-        tmp = (ConstraintLayout) v;
+        tmp = (ButtonManager) v;
         tmp.setVisibility(GONE);
         super.addView(tmp);
         layoutFinder.put("main",tmp);
+//        Log.i("childCount",Integer.toString(tmp.getChildCount()));
+        tmp.initThings();
 
         v = inflater.inflate(R.layout.characters2,null);
-        tmp = (ConstraintLayout) v;
+        tmp = (ButtonManager) v;
         tmp.setVisibility(GONE);
         super.addView(tmp);
         layoutFinder.put("assists",tmp);
+//        Log.i("childCount",Integer.toString(tmp.getChildCount()));
+        tmp.initThings();
+
     }
 
     public void changeView(String buttonName){
-        ConstraintLayout tmp = layoutFinder.get(buttonName.toLowerCase());
+        ButtonManager tmp = layoutFinder.get(buttonName.toLowerCase());
         if(tmp.getVisibility()==GONE){
             visible.setVisibility(GONE);
             tmp.setVisibility(VISIBLE);
@@ -73,7 +80,16 @@ public class KeyBoard extends ConstraintLayout {
         }
     }
 
-    public HashMap<String,ConstraintLayout> getLayoutFinder(){
+    public void setOutputDisplays(View v){
+        ButtonManager tmp;
+        int count = super.getChildCount();
+        for(int i=0; i<count ; i++){
+            tmp = (ButtonManager) super.getChildAt(i);
+            tmp.setOutputDisplay(v);
+        }
+    }
+
+    public HashMap<String,ButtonManager> getLayoutFinder(){
         return layoutFinder;
     }
 

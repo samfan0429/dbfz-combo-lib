@@ -28,17 +28,22 @@ public class Combo_Keyboard extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.combo_scribe);
 //        Log.d("From the main, the customkeyboard is: ", Integer.toString(R.id.customKeyboard));
         initCallButtons();
-
 //        test = (ImageButton) findViewById(R.id.buttonh);
 //        keyBoard = (FrameLayout) findViewById(R.id.customKeyboard);
 //        keyBoard.addView(aNewViewOne);
+
 
     }
 
     private void initCallButtons(){
         KeyBoard keypad = findViewById(R.id.customKeyboard);
+        initManagers(keypad);
         CallButtonLayout temp = findViewById(R.id.linearLayout);
         temp.setMyFrame(keypad);
+    }
+
+    private void initManagers(KeyBoard keypad){
+        keypad.setOutputDisplays(findViewById(R.id.output));
     }
 
     @Override

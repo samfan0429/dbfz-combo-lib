@@ -11,7 +11,6 @@ import android.widget.TextView;
 public class KeyButton extends androidx.appcompat.widget.AppCompatImageButton implements View.OnClickListener {
     ButtonManager papa;
     String name;
-    TextView output;
 
     public KeyButton(Context context){
         super(context);
@@ -23,17 +22,13 @@ public class KeyButton extends androidx.appcompat.widget.AppCompatImageButton im
         setOnClickListener(this);
         TypedArray a = context.obtainStyledAttributes(attrs,R.styleable.KeyButton);
         name = a.getString(R.styleable.KeyButton_keyName);
-        if(super.getParent()==null) {
-            Log.i("Name" ,name);
-        }
+//        if(super.getParent()==null) {
+//            Log.i("Name" ,name);
+//        }
     }
 
     public void setPapa(ButtonManager papa){
         this.papa = papa;
-    }
-
-    public void setOutput(TextView output){
-        this.output = output;
     }
 
     public ButtonManager getPapa(){
@@ -45,10 +40,10 @@ public class KeyButton extends androidx.appcompat.widget.AppCompatImageButton im
     }
     @Override
     public void onClick(View v) {
-        if(super.getParent()!=null) {
-            Log.i("YesPapa" ,name);
-        }
-//        papa.updateText(this.name);
+//        if(papa!=null) {
+//            Log.i("YesPapa" ,name);
+//        }
+        papa.updateText(this.name);
 //        String tmp = output.getText().toString()+this.name;
 //        output.setText(tmp);
     }

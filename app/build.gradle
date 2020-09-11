@@ -26,6 +26,7 @@ android {
             res.srcDirs = [
                     'src/main/res/drawable/numbers',
                     'src/main/res/drawable/buttons',
+                    'src/main/res/drawable/characters',
                     'src/main/res'
             ]
         }
